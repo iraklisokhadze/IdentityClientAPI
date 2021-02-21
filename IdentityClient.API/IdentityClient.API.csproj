@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.5.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityClient.Infrastructure.Repositories\IdentityClient.Infrastructure.Repositories.csproj" />
+    <ProjectReference Include="..\IdentityClient.Infrastructure.Services\IdentityClient.Infrastructure.Services.csproj" />
+  </ItemGroup>
+
+</Project>

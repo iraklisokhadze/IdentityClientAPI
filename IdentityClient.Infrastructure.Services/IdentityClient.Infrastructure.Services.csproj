@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IdentityClient.Core.Models\IdentityClient.Core.Models.csproj" />
+    <ProjectReference Include="..\IdentityClient.Core.Repositories\IdentityClient.Core.Repositories.csproj" />
+    <ProjectReference Include="..\IdentityClient.Core.Services\IdentityClient.Core.Services.csproj" />
+  </ItemGroup>
+
+</Project>
