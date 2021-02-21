@@ -26,7 +26,6 @@ namespace IdentityClient.Infrastructure.Repositories
         public async Task<bool> Create(Core.Models.User user)
         {
             user.Id = Guid.NewGuid();
-            user.PasswordHash = HashPassword(user.PasswordHash);
             var dbUser = _mapper.Map<User>(user);
             var result = await _userManager.CreateAsync(dbUser);
 
