@@ -3,23 +3,23 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Data;
 using System.Linq;
 
 namespace IdentityClient.Infrastructure.RelationDatabase
 {
-    public class UsersDbContext : IdentityDbContext<User, Role, Guid>
+    public class UsersDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     {
         public UsersDbContext() : base() { }
-        public UsersDbContext(DbContextOptions<UsersDbContext> options) : base(options) { Seed(); }
+        public UsersDbContext(DbContextOptions<UsersDbContext> options) : base(options) {/* Seed();*/ }
         private void Seed()
         {
             SaveChanges();
 
-            // Make sure we have a SysAdmin role
             var role = Roles.FirstOrDefault(r => r.NormalizedName == "USER");
             if (role == null)
             {
-                role = new Role
+                role = new IdentityRole<Guid>
                 {
                     Id = Guid.NewGuid(),
                     Name = "User",
@@ -39,6 +39,7 @@ namespace IdentityClient.Infrastructure.RelationDatabase
             builder.Entity<User>().HasIndex(u => u.Email).IsUnique();
             builder.Entity<User>().HasIndex(u => u.PersonalId).IsUnique();
             builder.Entity<User>().Property(u => u.PersonalId).HasMaxLength(255).IsRequired();
+            builder.Entity<User>().Property(u => u.Salary).HasColumnType("Money");
 
 
 
@@ -58,6 +59,5 @@ namespace IdentityClient.Infrastructure.RelationDatabase
 
         public DbSet<Address> Addresses { get; set; }
         public override DbSet<User> Users { get; set; }
-        public override DbSet<Role> Roles { get; set; }
     }
 }

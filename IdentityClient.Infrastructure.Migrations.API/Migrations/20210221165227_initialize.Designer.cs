@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IdentityClient.Infrastructure.Migrations.API.Migrations
 {
     [DbContext(typeof(UsersDbContext))]
-    [Migration("20210215151748_initialize")]
+    [Migration("20210221165227_initialize")]
     partial class initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,6 +77,9 @@ namespace IdentityClient.Infrastructure.Migrations.API.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -119,7 +122,7 @@ namespace IdentityClient.Infrastructure.Migrations.API.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("Money");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

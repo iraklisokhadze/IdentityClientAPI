@@ -58,14 +58,17 @@ namespace IdentityClient.Infrastructure.Repositories
         {
             var user = await _userManager.FindByNameAsync(userName);
 
+
+            //var checkResult = await _signInManager.CheckPasswordSignInAsync(user, PassswordHash, false);
             //var IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
             //var IsPhoneNumberConfirmed = await _userManager.IsPhoneNumberConfirmedAsync(user);
             //await _userManager.AddToRoleAsync(user, "User");
             //var users = await _userManager.GetUsersInRoleAsync("User");
 
-            //var result1 = await _signInManager.PasswordSignInAsync(userName, PassswordHash, false, false);
 
             var result = await _signInManager.PasswordSignInAsync(userName, PassswordHash, false, false);
+
+            await _signInManager.SignInAsync(user, false);
 
             if (result.IsNotAllowed)
             {

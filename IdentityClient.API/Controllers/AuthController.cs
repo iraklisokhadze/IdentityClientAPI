@@ -5,6 +5,7 @@ using IdentityClient.Core.Models;
 using IdentityClient.Core.Models.RequestModels;
 using IdentityClient.Core.Models.ResponseModels;
 using IdentityClient.Core.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
@@ -31,6 +32,9 @@ namespace IdentityClient.API.Controllers
             _mapper = mapper;
         }
 
+
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         public async Task<IActionResult> Regsister([FromBody] RegisterUserRequest request)
         {
@@ -42,7 +46,7 @@ namespace IdentityClient.API.Controllers
             await _userService.Create(userReq);
             userReq.ResidentialAddress.UserId = userReq.Id;
             await _addressService.Create(userReq.ResidentialAddress);
-            return Ok();
+            return Created("", userReq);
         }
 
         [HttpPost]

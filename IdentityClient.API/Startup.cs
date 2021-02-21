@@ -34,7 +34,7 @@ namespace IdentityClient.API
             });
             services.AddDbContext<Infrastructure.RelationDatabase.UsersDbContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("AuthDbContext")));
-            services.AddIdentity<Infrastructure.RelationDatabase.User, Infrastructure.RelationDatabase.Role>(options=> options.SignIn.RequireConfirmedAccount = false)
+            services.AddIdentity<Infrastructure.RelationDatabase.User, IdentityRole<Guid>>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddEntityFrameworkStores<Infrastructure.RelationDatabase.UsersDbContext>()
                     .AddDefaultTokenProviders();
 
@@ -63,6 +63,7 @@ namespace IdentityClient.API
 
             app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

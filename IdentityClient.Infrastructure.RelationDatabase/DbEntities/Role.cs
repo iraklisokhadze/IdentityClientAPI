@@ -7,7 +7,5 @@ using System.Threading.Tasks;
 
 namespace IdentityClient.Infrastructure.RelationDatabase
 {
-    public sealed class Role : IdentityRole<Guid>
-    {
-    }
+  
 }

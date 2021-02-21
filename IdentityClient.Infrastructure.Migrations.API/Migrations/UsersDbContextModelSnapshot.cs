@@ -120,7 +120,7 @@ namespace IdentityClient.Infrastructure.Migrations.API.Migrations
                         .HasColumnType("bit");
 
                     b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("Money");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
