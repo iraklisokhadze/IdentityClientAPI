@@ -17,15 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient.Core.Reposit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient.Core.Services", "IdentityClient.Core.Services\IdentityClient.Core.Services.csproj", "{B8FCAD07-36C5-498F-8EA7-E926E6050EC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient.Infrastructure.Migrations.API", "IdentityClient.Infrastructure.Migrations.API\IdentityClient.Infrastructure.Migrations.API.csproj", "{8BFA4130-0E66-4075-A037-349CB3C8A6B7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient.Infrastructure.RelationDatabase", "IdentityClient.Infrastructure.RelationDatabase\IdentityClient.Infrastructure.RelationDatabase.csproj", "{0A0383D3-C013-4510-8711-7B09E8D03103}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient.Infrastructure.Repositories", "IdentityClient.Infrastructure.Repositories\IdentityClient.Infrastructure.Repositories.csproj", "{B695E46F-158E-438D-ABDA-612776A4DCA3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityClient.Infrastructure.Services", "IdentityClient.Infrastructure.Services\IdentityClient.Infrastructure.Services.csproj", "{825A5B98-D480-4D8E-829D-5203066E00E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{BBE74F36-042C-4B32-B535-788CEC6666BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{BBE74F36-042C-4B32-B535-788CEC6666BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +47,6 @@ Global
 		{B8FCAD07-36C5-498F-8EA7-E926E6050EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8FCAD07-36C5-498F-8EA7-E926E6050EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8FCAD07-36C5-498F-8EA7-E926E6050EC2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BFA4130-0E66-4075-A037-349CB3C8A6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BFA4130-0E66-4075-A037-349CB3C8A6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BFA4130-0E66-4075-A037-349CB3C8A6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BFA4130-0E66-4075-A037-349CB3C8A6B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0A0383D3-C013-4510-8711-7B09E8D03103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A0383D3-C013-4510-8711-7B09E8D03103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A0383D3-C013-4510-8711-7B09E8D03103}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -78,7 +72,6 @@ Global
 		{5AD8C0FA-8D92-4EDF-B264-2E5D0F51997E} = {0C4358AF-6AA2-4C12-990A-6C1F2989AD51}
 		{97FB46D6-FC20-4C6E-BF57-1AB67A21FE4F} = {0C4358AF-6AA2-4C12-990A-6C1F2989AD51}
 		{B8FCAD07-36C5-498F-8EA7-E926E6050EC2} = {0C4358AF-6AA2-4C12-990A-6C1F2989AD51}
-		{8BFA4130-0E66-4075-A037-349CB3C8A6B7} = {D493BC78-062C-46FB-A1C4-5A7CA23737D3}
 		{0A0383D3-C013-4510-8711-7B09E8D03103} = {D493BC78-062C-46FB-A1C4-5A7CA23737D3}
 		{B695E46F-158E-438D-ABDA-612776A4DCA3} = {D493BC78-062C-46FB-A1C4-5A7CA23737D3}
 		{825A5B98-D480-4D8E-829D-5203066E00E7} = {D493BC78-062C-46FB-A1C4-5A7CA23737D3}
