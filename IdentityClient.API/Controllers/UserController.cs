@@ -2,15 +2,14 @@
 using IdentityClient.API.Validators;
 using IdentityClient.Core.Models;
 using IdentityClient.Core.Models.RequestModels;
-using IdentityClient.Core.Models.ResponseModels;
 using IdentityClient.Core.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NLog;
-using System;
 using System.Threading.Tasks;
 
 namespace IdentityClient.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]/[action]")]
     public class UserController : ControllerBase
@@ -28,15 +27,24 @@ namespace IdentityClient.API.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// პროფილის წაშლა
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> DeleteUser(EditUserRequest user)
         {
             var userReq = _mapper.Map<User>(user);
-            userReq.Deleted = true;
             await _userService.Edit(userReq);
             return Ok();
         }
 
+        /// <summary>
+        /// პროფილის რედაქტირება
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> UpdateUserData(EditUserRequest user)
         {

@@ -1,20 +1,25 @@
 ﻿using AutoMapper.Internal;
+using IdentityServer4.Models;
+using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Data;
 using System.Linq;
+using System.Collections.Generic;
+using IdentityServer4.EntityFramework.Mappers;
+using IdentityModel;
 
 namespace IdentityClient.Infrastructure.RelationDatabase
 {
-    public class UsersDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
+    public class IdentityClientDbContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
     {
-        public UsersDbContext() : base() { }
-        public UsersDbContext(DbContextOptions<UsersDbContext> options) : base(options) {/* Seed();*/ }
-        private void Seed()
+        public IdentityClientDbContext() : base() { }
+        public IdentityClientDbContext(DbContextOptions<IdentityClientDbContext> options, IServiceProvider serviceProvider) : base(options) { Seed(serviceProvider); }
+        private void Seed(IServiceProvider serviceProvider)
         {
-            SaveChanges();
 
             var role = Roles.FirstOrDefault(r => r.NormalizedName == "USER");
             if (role == null)
@@ -28,6 +33,7 @@ namespace IdentityClient.Infrastructure.RelationDatabase
                 Roles.Add(role);
             }
             SaveChanges();
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -49,6 +55,7 @@ namespace IdentityClient.Infrastructure.RelationDatabase
             builder.Entity<Address>().Property(a => a.Street).HasMaxLength(255).IsRequired();
             builder.Entity<Address>().Property(a => a.Building).HasMaxLength(255).IsRequired();
             builder.Entity<Address>().Property(a => a.Apartment).HasMaxLength(255).IsRequired();
+
 
             builder.Entity<User>().HasOne(u => u.Address).WithOne(a => a.User);
 

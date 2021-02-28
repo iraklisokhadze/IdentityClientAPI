@@ -1,5 +1,4 @@
 ﻿using IdentityClient.Core.Models;
-using IdentityClient.Core.Models.RequestModels;
 using System.Threading.Tasks;
 
 namespace IdentityClient.Core.Repositories

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace IdentityClient.Core.Models.RequestModels
 {
@@ -16,14 +12,14 @@ namespace IdentityClient.Core.Models.RequestModels
         public bool IsEmployed { get; set; }
         public decimal Salary { get; set; }
         [Required]
-        public AddressRequest Address { get; set; }
+        public AddAddressRequest Address { get; set; }
         [Required]
         public string UserName { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-        public string PasswordHash { get; set; }
+        public string Password { get; set; }
         [Required]
         [Phone]
         public string PhoneNumber { get; set; }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IdentityClient.Core.Models.ResponseModels
+﻿namespace IdentityClient.Core.Models.ResponseModels
 {
     public class ErrorMesage : IErrorMesage
     {

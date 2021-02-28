@@ -1,8 +1,6 @@
 ﻿using FluentValidation;
 using IdentityClient.Core.Models;
-using IdentityClient.Core.Models.RequestModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

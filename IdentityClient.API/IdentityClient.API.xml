@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IdentityClient.API</name>
+    </assembly>
+    <members>
+        <member name="M:IdentityClient.API.Controllers.AuthController.Regsister(IdentityClient.Core.Models.RequestModels.RegisterUserRequest)">
+            <summary>
+            მომხმარებლის რეგისტრაცია
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IdentityClient.API.Controllers.AuthController.LogIn(System.String,System.String)">
+            <summary>
+            ავტორიზაცია
+            </summary>
+            <param name="userName">მომხმარებლის სახელი</param>
+            <param name="password">მომხმარებლის პაროლი</param>
+            <returns></returns>
+        </member>
+        <member name="M:IdentityClient.API.Controllers.UserController.DeleteUser(IdentityClient.Core.Models.RequestModels.EditUserRequest)">
+            <summary>
+            პროფილის წაშლა
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IdentityClient.API.Controllers.UserController.UpdateUserData(IdentityClient.Core.Models.RequestModels.EditUserRequest)">
+            <summary>
+            პროფილის რედაქტირება
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

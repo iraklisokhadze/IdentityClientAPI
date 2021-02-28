@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IdentityClient.Infrastructure.Migrations.API.Migrations
 {
-    [DbContext(typeof(UsersDbContext))]
+    [DbContext(typeof(IdentityClientDbContext))]
     [Migration("20210221165227_initialize")]
     partial class initialize
     {

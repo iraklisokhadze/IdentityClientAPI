@@ -9,10 +9,10 @@ namespace IdentityClient.Infrastructure.Repositories
 {
     public class AddressRepository : IAddressRepository
     {
-        private readonly UsersDbContext _usersDbContext;
+        private readonly IdentityClientDbContext _usersDbContext;
         private readonly IMapper _mapper;
 
-        public AddressRepository(UsersDbContext usersDbContext, IMapper mapper)
+        public AddressRepository(IdentityClientDbContext usersDbContext, IMapper mapper)
         {
             _usersDbContext = usersDbContext;
             _mapper = mapper;

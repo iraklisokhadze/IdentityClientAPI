@@ -20,7 +20,7 @@ namespace IdentityClient.Infrastructure.Migrations.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
-            services.AddDbContext<UsersDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthDbContext")
+            services.AddDbContext<IdentityClientDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthDbContext")
                                                                                  , b => b.MigrationsAssembly("IdentityClient.Infrastructure.Migrations.API")
                                                                                   ), ServiceLifetime.Transient);
         }
